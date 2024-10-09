@@ -15,7 +15,7 @@ async function About({ params: { locale } }: { params: { locale: string } }) {
     >
       <Navigation />
       <div className="container">
-        <div className="mt-5">
+        <div className="mt-5 border border-red-500">
           <h1>{t("about.About title")}</h1>
           <p>{t("about.About description")}</p>
           <p className="border border-red-500">

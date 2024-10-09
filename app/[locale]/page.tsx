@@ -17,7 +17,7 @@ async function Home({ params: { locale } }: { params: { locale: string } }) {
       <div className="container">
         <div className="mt-5">
           <h1>{t("home.Home title")}</h1>
-          <p>{t("home.Home description")}</p>
+          <p className="h-[3000px] border border-red-500">{t("home.Home description")}</p>
         </div>
       </div>
     </TranslationsProvider>
