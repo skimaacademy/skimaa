@@ -1,6 +1,7 @@
 import TranslationsProvider from "@/components/TranslationsProvider";
 import Navigation from "@/components/Navigation";
 import initializeTranslations from "@/app/i18n";
+import Header from "@/components/header/header";
 
 const i18nNamespaces = ["common"];
 
@@ -13,6 +14,9 @@ async function About({ params: { locale } }: { params: { locale: string } }) {
       locale={locale}
       resources={resources}
     >
+
+      <Header />
+
       <Navigation />
       <div className="container">
         <div className="mt-5 border border-red-500">

@@ -5,8 +5,8 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import { usePathname } from "next/navigation";
 
 export default function Navigation() {
+  
   const pathname = usePathname();
-
   const { t } = useTranslation("common");
 
   return (
@@ -20,7 +20,7 @@ export default function Navigation() {
             <li className="nav-item">
               <Link
                 href="/"
-                className={`nav-link ${pathname === "/" ? "active" : ""}`}
+                className={`nav-link ${pathname === "/" ? "active text-red-500" : ""}`}
               >
                 {t("navigation.Home")}
               </Link>
@@ -28,7 +28,7 @@ export default function Navigation() {
             <li className="nav-item">
               <Link
                 href="/about"
-                className={`nav-link ${pathname === "/about" ? "active" : ""}`}
+                className={`nav-link ${pathname === "/about" ? "active text-red-500" : ""}`}
               >
                 {t("navigation.About")}
               </Link>

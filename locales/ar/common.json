@@ -1,14 +1,18 @@
 {
   "navigation": {
-    "Home": "مسكن",
-    "About": "حول"
+    "Home": "الرئيسية",
+    "About": "من نحن",
+    "Courses": "الدورات",
+    "Resources": "الموارد",
+    "Pricing": "التسعير"
   },
   "home": {
-    "Home title": "عنوان المنزل",
-    "Home description": "وصف المنزل"
+    "Slogan": "منصة للتعليم والتدريب القائم على المهارات",
+    "Our Courses": "دوراتنا",
+    "Our Courses Description": "تعلم مجانًا مع الفصول الدراسية الحية ومقاطع الفيديو المسجلة مسبقًا"
   },
   "about": {
-    "About title": "حول العنوان",
-    "About description": "حول الوصف"
+    "About title": "عنوان حول",
+    "About description": "وصف حول"
   }
 }

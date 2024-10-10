@@ -1,11 +1,15 @@
 {
   "navigation": {
     "Home": "Home",
-    "About": "About"
+    "About": "About",
+    "Courses": "Courses",
+    "Resources": "Resources",
+    "Pricing": "Pricing"
   },
   "home": {
-    "Home title": "Home title",
-    "Home description": "Home description"
+    "Slogan": "A platform for skill-based Learning & Teaching",
+    "Our Courses": "Our Courses",
+    "Our Courses Description": "Learn for free with Live Classes and Pre Recorded Videos"
   },
   "about": {
     "About title": "About title",

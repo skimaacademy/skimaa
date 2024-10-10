@@ -2,6 +2,9 @@ import TranslationsProvider from "@/components/TranslationsProvider";
 import Navigation from "@/components/Navigation";
 import initializeTranslations from "../i18n";
 import { Button } from "@/components/ui/button";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+import Header from "@/components/header/header";
+import CoursesSection from "./sections/courses-section";
 
 const i18nNamespaces = ["common"];
 
@@ -14,14 +17,19 @@ async function Home({ params: { locale } }: { params: { locale: string } }) {
       locale={locale}
       resources={resources}
     >
-      <Navigation />
-      <div className="container">
-        <div className="mt-5">
-          <Button>Click me</Button>
-          <h1>{t("home.Home title")}</h1>
-          <p className="h-[3000px] border border-red-500">{t("home.Home description")}</p>
-        </div>
+      <div className="mx-4 md:mx-6">
+        {/* <LocaleSwitcher />
+        <div className="container">
+          <div className="mt-5">
+            <h1>{t("home.Home title")}</h1>
+            <p>{t("home.Home description")}</p>
+          </div>
+        </div> */}
+
+        <Header />
+        <CoursesSection />
       </div>
+
     </TranslationsProvider>
   );
 }
