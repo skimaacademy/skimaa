@@ -10,11 +10,10 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import SkimaaFullLogo from "../logo/skimaa-full-logo";
 import SkimaaLogo from "../logo/skimaa-logo";
 import { ThemeToggler } from "../ThemeProvider/theme-toggler";
-import { toast } from "sonner";
-import { willBeAvailableSoon } from "@/services/utility/temporary.service";
 import { LocaleToggler } from "../LocaleProvider/locale-togger";
 import { useTranslation } from "react-i18next";
 import { refineLocalePrefixForRoute, refineRoutePath } from "@/i18nConfig";
+import { UnavailableFeatureToastButton } from "../button/unavailable-feature-toast-button";
 
 export type NavLink = {
   name: string;
@@ -120,7 +119,8 @@ export default function Navbar() {
           <ThemeToggler />
         </div>
 
-        <Button onClick={willBeAvailableSoon}>Contact Us</Button>
+        {/* <Button onClick={willBeAvailableSoon}>Contact Us</Button> */}
+        <UnavailableFeatureToastButton buttonText="Contact Us" />
 
         {/* <div>
           <NotificationSystem></NotificationSystem>

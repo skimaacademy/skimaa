@@ -14,5 +14,8 @@
   "about": {
     "About title": "আমাদের সম্পর্কে শিরোনাম",
     "About description": "আমাদের সম্পর্কে বর্ণনা"
+  },
+  "other": {
+    "Feature Coming Soon": "এই বৈশিষ্ট্যটি শীঘ্রই উপলব্ধ হবে"
   }
 }

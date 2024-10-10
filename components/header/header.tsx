@@ -3,11 +3,11 @@
 import { Button } from "../ui/button";
 import SkimaaFullLogo from "../logo/skimaa-full-logo";
 import Navbar from "../navbar/navbar";
-import { willBeAvailableSoon } from "@/services/utility/temporary.service";
 import groupStudyImage from 'images/resources/group-study-fill.png';
 import Image from 'next/image';
 import { FeaturedCoursesCard } from "@/app/[locale]/sections/cards/feature-courses-card";
 import { useTranslation } from "react-i18next";
+import { UnavailableFeatureToastButton } from "../button/unavailable-feature-toast-button";
 
 export default function Header() {
 
@@ -22,7 +22,8 @@ export default function Header() {
             <div className="flex flex-col justify-center items-center md:items-start">
               <SkimaaFullLogo height={40} className='mb-2'></SkimaaFullLogo>
               <h5 className="">{t("home.Slogan")}</h5>
-              <Button onClick={willBeAvailableSoon} className="mt-5">Enroll Now!</Button>
+              {/* <Button onClick={willBeAvailableSoon} className="mt-5">Enroll Now!</Button> */}
+              <UnavailableFeatureToastButton className='mt-5' buttonText="Enroll Now!" />
             </div>
             <div className="hidden md:block rounded-full bg-slate-300">
               <Image

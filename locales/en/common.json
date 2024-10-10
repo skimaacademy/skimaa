@@ -14,5 +14,8 @@
   "about": {
     "About title": "About title",
     "About description": "About description"
+  },
+  "other": {
+    "Feature Coming Soon": "This feature will be available soon"
   }
 }

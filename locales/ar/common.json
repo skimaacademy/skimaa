@@ -14,5 +14,8 @@
   "about": {
     "About title": "عنوان حول",
     "About description": "وصف حول"
+  },
+  "other": {
+    "Feature Coming Soon": "ستكون هذه الميزة متاحة قريبًا"
   }
 }
