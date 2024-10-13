@@ -40,7 +40,7 @@ export default function Navbar() {
   const currentLocale = i18n.language;
 
   return (
-    <header className="sticky top-0 flex py-1 items-center gap-4 border-b bg-background z-50 min-h-[4rem]">
+    <header className="sticky top-0 flex py-1 items-center gap-4 border-b bg-background z-[9999] min-h-[4rem]">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 w-full">
         <div className="w-[110px]">
           <SkimaaFullLogo height={24} />

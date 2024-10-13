@@ -5,7 +5,7 @@ import SkimaaFullLogo from "../logo/skimaa-full-logo";
 import Navbar from "../navbar/navbar";
 import groupStudyImage from 'images/resources/group-study-fill.png';
 import Image from 'next/image';
-import { FeaturedCoursesCard } from "@/app/[locale]/sections/cards/feature-courses-card";
+import { FeaturedCoursesCard } from "@/components/home/cards/feature-courses-card";
 import { useTranslation } from "react-i18next";
 import { UnavailableFeatureToastButton } from "../button/unavailable-feature-toast-button";
 
