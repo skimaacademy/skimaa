@@ -15,8 +15,7 @@ export default function Header() {
   
   return (
     <div className="flex flex-col">
-      <div className="md:h-screen flex flex-col">
-        <Navbar />
+      <div className="md:h-[calc(100vh-4rem)] flex flex-col">
         <div className="mt-2 h-full min-h-[400px] flex flex-col justify-center items-center gap-6">
           <div className="flex flex-col md:flex-row justify-between max-w-screen-lg w-full">
             <div className="flex flex-col justify-center items-center md:items-start">

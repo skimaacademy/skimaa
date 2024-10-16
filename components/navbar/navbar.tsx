@@ -40,7 +40,7 @@ export default function Navbar() {
   const currentLocale = i18n.language;
 
   return (
-    <header className="sticky top-0 flex py-1 items-center gap-4 border-b bg-background z-[9999] min-h-[4rem]">
+    <div className="md:sticky md:top-0 flex py-1 items-center gap-4 border-b bg-background z-[50] min-h-[4rem]">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 w-full">
         <div className="w-[110px]">
           <SkimaaFullLogo height={24} />
@@ -89,7 +89,7 @@ export default function Navbar() {
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left">
+        <SheetContent side="left" className="">
           <nav className="grid gap-6 text-lg font-medium">
           <SkimaaLogo height={26} />
 
@@ -97,11 +97,11 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`${pathname === item.href
-                  ? "text-foreground"
+                className={`${ pathname === refineLocalePrefixForRoute(currentLocale) + refineRoutePath(item.href, currentLocale)
+                  ? "text-primary"
                   : "text-muted-foreground"
                   } transition-colors hover:text-foreground text-base`}
-                aria-current={pathname === item.href ? "page" : undefined}
+                aria-current={pathname === refineLocalePrefixForRoute(currentLocale) + refineRoutePath(item.href, currentLocale) ? "page" : undefined}
               >
                 {item.name}
               </Link>
@@ -109,7 +109,7 @@ export default function Navbar() {
           </nav>
         </SheetContent>
       </Sheet>
-      <div className="flex items-center w-full justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
+      <div className="flex items-center w-full justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4 ">
 
         <div>
           <LocaleToggler />
@@ -159,6 +159,6 @@ export default function Navbar() {
           </DropdownMenu>
         </div> */}
       </div>
-    </header>
+    </div>
   );
 }

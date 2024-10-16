@@ -12,8 +12,16 @@
     "Our Courses Description": "Learn for free with Live Classes and Pre Recorded Videos"
   },
   "about": {
-    "About title": "About title",
-    "About description": "About description"
+    "Title": "About",
+    "Introduction": "Welcome to Skimaa, where we believe in the power of education to shape your future. We believe learning should be practical, skill-based, and ready for tomorrow’s challenges. That’s why our experts have come together to give you the tools you need to succeed—because we believe your future should be easier, smarter, and brighter. Ready to learn? We believe the future starts here.",
+    "Mission": "Our mission is to empower individuals with the knowledge and skills necessary to thrive in an ever-changing world. We aim to create a learning experience that is accessible, innovative, and effective.",
+    "Vision": "We envision a world where education is the cornerstone of personal and professional growth, providing opportunities for lifelong success and development.",
+    "Values": "We believe in integrity, innovation, inclusivity, and a commitment to excellence in everything we do.",
+    "Team": "Our team is made up of dedicated professionals and educators with a passion for delivering high-quality education and training.",
+    "History": "Founded in [Year], Skimaa has grown from a small initiative to a leading platform that provides skill-based learning solutions to thousands of learners worldwide.",
+    "WhyChooseUs": "We offer a unique combination of practical learning, expert guidance, and a focus on future-ready skills, making us the preferred choice for learners of all ages.",
+    "Offerings": "Our offerings include a wide range of courses, workshops, and resources that cater to both beginners and advanced learners across various disciplines.",
+    "ContactInfo": "You can reach us at support@skimaa.academy or call us at +123456789 for any inquiries."
   },
   "other": {
     "Feature Coming Soon": "This feature will be available soon"
