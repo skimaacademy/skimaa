@@ -10,6 +10,7 @@ import initializeTranslations from "@/app/i18n";
 import CoursesSection from "@/components/home/sections/courses-section";
 import Navbar from "@/components/navbar/navbar";
 import { ReactNode } from "react";
+import Footer from "@/components/footer/footer";
 
 const i18nNamespaces = ["common"];
 
@@ -26,6 +27,8 @@ async function PagesLayout({ children, params: { locale } }: { children: ReactNo
         <Navbar />
         {children}
       </div>
+      <SectionGap />
+      <Footer />
     </TranslationsProvider>
   );
 }
