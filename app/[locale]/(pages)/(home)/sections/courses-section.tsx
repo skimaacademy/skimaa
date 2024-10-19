@@ -5,8 +5,8 @@ import course2 from 'images/courses/course-2.png';
 import course3 from 'images/courses/course-3.png';
 import course4 from 'images/courses/course-4.png';
 import { Button } from '@/components/ui/button';
-import CourseCard from '../cards/courses-card';
 import { useTranslation } from 'react-i18next';
+import CourseCard from '../cards/courses-card';
 
 const CoursesSection = () => {
 

@@ -1,8 +1,8 @@
 import Header from "@/components/header/header";
-import TestimonialSection from "@/components/home/sections/testimonial-section";
-import { BlogNewsSection } from "@/components/home/sections/blog-news-section";
-import CoursesSection from "@/components/home/sections/courses-section";
 import initializeTranslations from "@/app/i18n";
+import CoursesSection from "./sections/courses-section";
+import TestimonialSection from "./sections/testimonial-section";
+import { BlogNewsSection } from "./sections/blog-news-section";
 
 async function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const i18nNamespaces = ["common"];

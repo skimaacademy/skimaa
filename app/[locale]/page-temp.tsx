@@ -4,10 +4,9 @@ import initializeTranslations from "../i18n";
 import { Button } from "@/components/ui/button";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import Header from "@/components/header/header";
-import CoursesSection from "../../components/home/sections/courses-section";
-import FeatureSection from "@/components/home/sections/feature-section";
-import TestimonialSection from "@/components/home/sections/testimonial-section";
-import { BlogNewsSection } from "@/components/home/sections/blog-news-section";
+import CoursesSection from "./(pages)/(home)/sections/courses-section";
+import TestimonialSection from "./(pages)/(home)/sections/testimonial-section";
+import { BlogNewsSection } from "./(pages)/(home)/sections/blog-news-section";
 
 const i18nNamespaces = ["common"];
 
