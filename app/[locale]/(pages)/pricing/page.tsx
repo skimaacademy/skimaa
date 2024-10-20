@@ -101,8 +101,8 @@ const PricingPage: FC = () => {
   ];
 
   return (
-    <div className=''>
-      <h1 className="text-3xl text-center font-bold mt-10 default-text-color">Pricing Plans</h1>
+    <div className='mt-5'>
+      <h2 className="text-3xl font-bold text-center">Pricing <span className="text-primary">Plans</span></h2>
       <p className="text-center text-secondary-foreground/60">Affordable education fee</p>
 
       <div className="flex justify-center items-center mt-10">
