@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import { dir } from "i18next";
-import "/node_modules/flag-icons/css/flag-icons.min.css";
-import './globals.css';
 import { ThemeProvider } from "@/components/ThemeProvider/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+import './globals.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
