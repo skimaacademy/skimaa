@@ -17,31 +17,20 @@ import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import { NavLinks, NavLinksWithName } from '@/constants/global-constants';
 
-const blogPosts = [
-  {
-    id: 1,
-    title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    date: 'MARCH 31, 2022',
-    author: 'Jerome Bell',
-    tag: 'EDUSARTHI STORYCIRCLE',
-  },
-  {
-    id: 2,
-    title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    date: 'MARCH 31, 2022',
-    author: 'Albert Flores',
-    tag: 'EDUSARTHI STORYCIRCLE',
-  },
-  {
-    id: 3,
-    title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    date: 'MARCH 31, 2022',
-    author: 'Kristin Watson',
-    tag: 'EDUSARTHI STORYCIRCLE',
-  },
-];
+export interface BlogPost {
+  id: number;
+  title: string;
+  date: string;
+  author: string;
+  tag: string;
+}
 
-export function BlogNewsSection() {
+export interface BlogNewsSectionProps {
+  isDisplayViewAllButton: boolean;
+  blogPosts: BlogPost[];
+}
+
+export function BlogNewsSection({ isDisplayViewAllButton, blogPosts }: BlogNewsSectionProps) {
 
   const { t } = useTranslation("common");
   
@@ -82,11 +71,15 @@ export function BlogNewsSection() {
           </Card>
         ))}
       </div>
-      <div className='flex mt-6'>
-        <Button variant='default' className='mx-auto' asChild>
-          <Link href={NavLinks.BlogAndNews}>View All</Link>
-        </Button>
-      </div>
+      
+      {
+        isDisplayViewAllButton &&
+        <div className='flex mt-6'>
+          <Button variant='default' className='mx-auto' asChild>
+            <Link href={NavLinks.BlogAndNews}>View All</Link>
+          </Button>
+        </div>
+      }
     </div>
   );
 }

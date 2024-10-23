@@ -4,6 +4,7 @@ import CoursesSection from "./sections/courses-section";
 import GuardianReviewsSection from "./sections/guardian-reviews-section";
 import { BlogNewsSection } from "./sections/blog-news-section";
 import ImageTextCardSection from "./sections/image-text-card-section";
+import { BlogPosts } from "../blog-and-news/blog-and-news-data";
 
 async function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const i18nNamespaces = ["common"];
@@ -19,7 +20,7 @@ async function HomePage({ params: { locale } }: { params: { locale: string } }) 
       <SectionGap />
       <GuardianReviewsSection />
       <SectionGap />
-      <BlogNewsSection />
+      <BlogNewsSection isDisplayViewAllButton={true} blogPosts={BlogPosts} />
     </>
   );
 }
