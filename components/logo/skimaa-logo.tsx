@@ -15,8 +15,8 @@ interface SkimaaLogoProps {
 
 const SkimaaLogo: React.FC<SkimaaLogoProps> = ({ height = 24, className = '' }) => {
   const { theme } = useTheme();
-  const original_width = 1370;
-  const original_height = 307;
+  const original_width = 1563;
+  const original_height = 1563;
   const width = (original_width / original_height) * height
 
   const [logoSrc, setLogoSrc] = useState(SkimaaLogoPng);
