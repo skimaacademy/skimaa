@@ -68,7 +68,7 @@ const CoursesSection = () => {
   return (
     <div className="container mx-auto my-8">
       <h2 className="text-3xl font-bold text-center">Our <span className="text-primary">Courses</span></h2>
-      <p className="text-center text-gray-500 mb-8">{t('home.Our Courses Description')}</p>
+      <p className="text-center text-secondary-foreground/60 mb-8">{t('home.Our Courses Description')}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {courses.map((course, index) => (
           <CourseCard

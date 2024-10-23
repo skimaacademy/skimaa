@@ -3,6 +3,7 @@ import initializeTranslations from "@/app/i18n";
 import CoursesSection from "./sections/courses-section";
 import GuardianReviewsSection from "./sections/guardian-reviews-section";
 import { BlogNewsSection } from "./sections/blog-news-section";
+import ImageTextCardSection from "./sections/image-text-card-section";
 
 async function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const i18nNamespaces = ["common"];
@@ -11,6 +12,9 @@ async function HomePage({ params: { locale } }: { params: { locale: string } }) 
   return (
     <>
       <Header />
+      <SectionGap />
+      <ImageTextCardSection />
+      <SectionGap />
       <CoursesSection />
       <SectionGap />
       <GuardianReviewsSection />

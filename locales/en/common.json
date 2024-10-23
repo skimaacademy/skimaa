@@ -11,7 +11,9 @@
     "Our Courses": "Our Courses",
     "Our Courses Description": "Learn for free with Live Classes and Pre Recorded Videos",
     "Guardian Reviews": "Guardian Reviews",
-    "Guardian Reviews Description": "Feedback from guardians on their child's online learning experience."
+    "Guardian Reviews Description": "Feedback from guardians on their child's online learning experience.",
+    "Our Blog & News": "Our Blog & News",
+    "Our Blog & News Description": "Stay updated with the latest articles, tips, and news in online education."
   },
   "about": {
     "Title": "About",
@@ -23,9 +25,7 @@
     "History": "Founded in [Year], Skimaa has grown from a small initiative to a leading platform that provides skill-based learning solutions to thousands of learners worldwide.",
     "WhyChooseUs": "We offer a unique combination of practical learning, expert guidance, and a focus on future-ready skills, making us the preferred choice for learners of all ages.",
     "Offerings": "Our offerings include a wide range of courses, workshops, and resources that cater to both beginners and advanced learners across various disciplines.",
-    "ContactInfo": "You can reach us at skima.academy@gmail.com or call us at +123456789 for any inquiries.",
-    "Our Blog & News": "Our Blog & News",
-    "Our Blog & News Description": "Stay updated with the latest articles, tips, and news in online education."
+    "ContactInfo": "You can reach us at skima.academy@gmail.com or call us at +123456789 for any inquiries."
   },
   "other": {
     "Feature Coming Soon": "This feature will be available soon"
