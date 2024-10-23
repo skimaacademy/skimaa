@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import Header from "@/components/header/header";
 import CoursesSection from "./(pages)/(home)/sections/courses-section";
-import TestimonialSection from "./(pages)/(home)/sections/testimonial-section";
+import GuardianReviewsSection from "./(pages)/(home)/sections/guardian-reviews-section";
 import { BlogNewsSection } from "./(pages)/(home)/sections/blog-news-section";
 
 const i18nNamespaces = ["common"];
@@ -31,7 +31,7 @@ async function Home({ params: { locale } }: { params: { locale: string } }) {
         <Header />
         <CoursesSection />
         <SectionGap />
-        <TestimonialSection />
+        <GuardianReviewsSection />
         <SectionGap />
         <BlogNewsSection />
         <div className="mt-2"></div>

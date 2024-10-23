@@ -1,8 +1,11 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { getNameInitials } from "@/services/utility/utility.service";
 import * as Avatar from "@radix-ui/react-avatar";
 import Image from 'next/image';
+import { useTranslation } from "react-i18next";
 
 const testimonials = [
   {
@@ -43,12 +46,16 @@ const testimonials = [
   }
 ];
 
-export default function TestimonialSection() {
+export default function GuardianReviewsSection() {
+
+  const { t } = useTranslation("common");
+  
   return (
     <div className="container mx-auto my-8">
-      <h2 className="text-3xl font-bold text-center mb-4">
-        Client <span className="text-primary">Testimonials</span>
-       </h2>
+      <h2 className="text-3xl font-bold text-center">
+        Guardian <span className="text-primary">Reviews</span>
+      </h2>
+      <p className="text-center text-gray-500 mb-8">{t('home.Guardian Reviews Description')}</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
@@ -81,9 +88,9 @@ export default function TestimonialSection() {
         ))}
       </div>
 
-      <div className='flex mt-6'>
+      {/* <div className='flex mt-6'>
         <Button variant='default' className='mx-auto'>View All</Button>
-      </div>
+      </div> */}
 
     </div>
   );

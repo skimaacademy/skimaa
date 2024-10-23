@@ -1,7 +1,7 @@
 import Header from "@/components/header/header";
 import initializeTranslations from "@/app/i18n";
 import CoursesSection from "./sections/courses-section";
-import TestimonialSection from "./sections/testimonial-section";
+import GuardianReviewsSection from "./sections/guardian-reviews-section";
 import { BlogNewsSection } from "./sections/blog-news-section";
 
 async function HomePage({ params: { locale } }: { params: { locale: string } }) {
@@ -13,7 +13,7 @@ async function HomePage({ params: { locale } }: { params: { locale: string } }) 
       <Header />
       <CoursesSection />
       <SectionGap />
-      <TestimonialSection />
+      <GuardianReviewsSection />
       <SectionGap />
       <BlogNewsSection />
     </>

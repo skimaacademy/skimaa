@@ -14,7 +14,7 @@ import { LocaleToggler } from "../LocaleProvider/locale-togger";
 import { useTranslation } from "react-i18next";
 import { refineLocalePrefixForRoute, refineRoutePath } from "@/i18nConfig";
 import { UnavailableFeatureToastButton } from "../button/unavailable-feature-toast-button";
-import { NavLink, NavLinks } from "@/constants/global-constants";
+import { NavLink, NavLinksWithName } from "@/constants/global-constants";
 
 export type GeneralNavbarProps = {
   navLinks: NavLink[];
@@ -34,7 +34,7 @@ export default function Navbar() {
           <SkimaaFullLogo height={24} />
         </div>
 
-        {NavLinks.map((item, index) => (
+        {NavLinksWithName.map((item, index) => (
           <Link
             key={index}
             href={item.href}
@@ -60,7 +60,7 @@ export default function Navbar() {
           <nav className="grid gap-6 text-lg font-medium">
           <SkimaaLogo height={26} />
 
-            {NavLinks.map((item) => (
+            {NavLinksWithName.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}

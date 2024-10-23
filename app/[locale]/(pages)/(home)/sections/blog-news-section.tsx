@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react';
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +13,9 @@ import {
 import { Share2 } from 'lucide-react';
 import Image from 'next/image';
 import courseImage1 from 'images/courses/course-1.png';
+import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
+import { NavLinks, NavLinksWithName } from '@/constants/global-constants';
 
 const blogPosts = [
   {
@@ -37,11 +42,15 @@ const blogPosts = [
 ];
 
 export function BlogNewsSection() {
+
+  const { t } = useTranslation("common");
+  
   return (
     <div className="container mx-auto my-8">
-      <h1 className="text-3xl font-bold text-center mb-4">
+      <h1 className="text-3xl font-bold text-center">
         Our <span className="text-primary">Blog & News</span>
       </h1>
+      <p className="text-center text-gray-500 mb-8">{t('home.Our Blog & News Description')}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogPosts.map((post) => (
@@ -74,7 +83,9 @@ export function BlogNewsSection() {
         ))}
       </div>
       <div className='flex mt-6'>
-      <Button variant='default' className='mx-auto'>View All</Button>
+        <Button variant='default' className='mx-auto' asChild>
+          <Link href={NavLinks.BlogAndNews}>View All</Link>
+        </Button>
       </div>
     </div>
   );

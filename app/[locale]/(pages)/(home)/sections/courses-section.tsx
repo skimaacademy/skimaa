@@ -7,6 +7,8 @@ import course4 from 'images/courses/course-4.png';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import CourseCard from '../cards/courses-card';
+import Link from 'next/link';
+import { NavLinks } from '@/constants/global-constants';
 
 const CoursesSection = () => {
 
@@ -65,7 +67,7 @@ const CoursesSection = () => {
 
   return (
     <div className="container mx-auto my-8">
-      <h2 className="text-3xl font-bold text-center mb-4">Our <span className="text-primary">Courses</span></h2>
+      <h2 className="text-3xl font-bold text-center">Our <span className="text-primary">Courses</span></h2>
       <p className="text-center text-gray-500 mb-8">{t('home.Our Courses Description')}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {courses.map((course, index) => (
@@ -79,7 +81,9 @@ const CoursesSection = () => {
         ))}
       </div>
       <div className='flex mt-6'>
-        <Button variant='default' className='mx-auto'>View All</Button>
+        <Button variant='default' className='mx-auto' asChild>
+          <Link href={NavLinks.Courses}>View All</Link>
+        </Button>
       </div>
     </div>
   );
