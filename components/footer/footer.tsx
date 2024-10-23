@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { cn } from '@/lib/utils';
 import SkimaaFullLogo from '../logo/skimaa-full-logo';
+import { NavLinks } from '@/constants/global-constants';
 
 const Footer: FC = () => {
   return (
@@ -14,11 +15,14 @@ const Footer: FC = () => {
             </p>
           </div>
           <div className="mt-4 md:mt-0">
-            <nav className="flex flex-col md:flex-row space-x-4">
-              <a href="/about" className="hover:text-gray-400">About Us</a>
-              <a href="/courses" className="hover:text-gray-400">Courses</a>
-              <a href="/contact" className="hover:text-gray-400">Contact</a>
-              <a href="/privacy" className="hover:text-gray-400">Privacy Policy</a>
+            <nav className="flex flex-col md:flex-row space-x-5">
+              {
+                NavLinks.map((nav, index) => (
+                  <a key={index} href={nav.href} className="hover:text-gray-400">
+                    {nav.name}
+                  </a>
+                ))
+              }
             </nav>
           </div>
           <div className="mt-4 md:mt-0">

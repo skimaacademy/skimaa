@@ -14,23 +14,11 @@ import { LocaleToggler } from "../LocaleProvider/locale-togger";
 import { useTranslation } from "react-i18next";
 import { refineLocalePrefixForRoute, refineRoutePath } from "@/i18nConfig";
 import { UnavailableFeatureToastButton } from "../button/unavailable-feature-toast-button";
-
-export type NavLink = {
-  name: string;
-  href: string;
-};
+import { NavLink, NavLinks } from "@/constants/global-constants";
 
 export type GeneralNavbarProps = {
   navLinks: NavLink[];
 };
-
-const navLinks: NavLink[] = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Courses', href: '/courses' },
-  { name: 'Resources', href: '/resources' },
-  { name: 'Pricing', href: '/pricing' },
-];
 
 export default function Navbar() {
 
@@ -45,29 +33,8 @@ export default function Navbar() {
         <div className="w-[110px]">
           <SkimaaFullLogo height={24} />
         </div>
-        {/* <Link
-          href="#"
-          className="flex items-center gap-2 text-lg font-semibold md:text-base"
-        >
-          <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
-        </Link> */}
 
-        {/* <Link
-          href="/home"
-          className={`nav-link ${pathname === "/home" ? "active" : ""}`}
-        >
-          Home
-        </Link>
-
-        <Link
-          href="/about"
-          className={`nav-link ${pathname === "/about" ? "active" : ""}`}
-        >
-          About
-        </Link> */}
-
-        {navLinks.map((item, index) => (
+        {NavLinks.map((item, index) => (
           <Link
             key={index}
             href={item.href}
@@ -93,7 +60,7 @@ export default function Navbar() {
           <nav className="grid gap-6 text-lg font-medium">
           <SkimaaLogo height={26} />
 
-            {navLinks.map((item) => (
+            {NavLinks.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
