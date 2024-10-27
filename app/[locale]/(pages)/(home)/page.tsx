@@ -7,6 +7,7 @@ import ImageTextCardSection from "./sections/image-text-card-section";
 import { BlogPosts } from "../blog-and-news/blog-and-news-data";
 import { Courses } from "../courses/courses-data";
 import { FaqModel, FaqSection } from "./sections/faq-section";
+import RoadmapSection from "./sections/roadmap-section";
 
 async function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const i18nNamespaces = ["common"];
@@ -72,6 +73,8 @@ async function HomePage({ params: { locale } }: { params: { locale: string } }) 
       <ImageTextCardSection />
       <SectionGap />
       <CoursesSection isDisplayViewAllButton={true} courses={Courses} />
+      <SectionGap />
+      <RoadmapSection />
       <SectionGap />
       <GuardianReviewsSection />
       <SectionGap />
