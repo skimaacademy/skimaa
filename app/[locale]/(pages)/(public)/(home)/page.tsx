@@ -4,10 +4,9 @@ import CoursesSection from "./sections/courses-section";
 import GuardianReviewsSection from "./sections/guardian-reviews-section";
 import { BlogNewsSection } from "./sections/blog-news-section";
 import ImageTextCardSection from "./sections/image-text-card-section";
-import { BlogPosts } from "../blog-and-news/blog-and-news-data";
-import { Courses } from "../courses/courses-data";
 import { FaqModel, FaqSection } from "./sections/faq-section";
 import RoadmapSection from "./sections/roadmap-section";
+import { Courses } from "../courses/courses-data";
 
 async function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const i18nNamespaces = ["common"];
