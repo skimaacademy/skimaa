@@ -86,8 +86,15 @@ export default function Navbar() {
           <ThemeToggler />
         </div>
 
+        <Button asChild>
+          <Link href="/signin">Sign In</Link>
+        </Button>
+        <Button asChild>
+          <Link href="/signup">Sign Up</Link>
+        </Button>
+
         {/* <Button onClick={willBeAvailableSoon}>Contact Us</Button> */}
-        <UnavailableFeatureToastButton buttonText="Contact Us" />
+        {/* <UnavailableFeatureToastButton buttonText="Contact Us" /> */}
 
         {/* <div>
           <NotificationSystem></NotificationSystem>
