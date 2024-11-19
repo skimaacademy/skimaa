@@ -18,3 +18,13 @@ export const NavLinksWithName: NavLink[] = [
   { name: 'Blog & News', href: '/blog-and-news' },
   { name: 'About', href: '/about' },
 ];
+
+export const UserNavLinks = {
+  Dashboard: '/dashboard',
+  Profile: '/profile',
+} as const;
+
+export const UserNavLinksWithName: NavLink[] = [
+  { name: 'Dashboard', href: '/dashboard' },
+  { name: 'Profile', href: '/profile' },
+];

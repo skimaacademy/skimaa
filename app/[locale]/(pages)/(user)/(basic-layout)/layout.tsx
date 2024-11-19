@@ -1,4 +1,4 @@
-import Navbar from "@/components/navbar/navbar";
+import PublicNavbar from "@/components/navbar/public-navbar/public-navbar";
 import { ReactNode } from "react";
 import Footer from "@/components/footer/footer";
 
@@ -6,7 +6,7 @@ async function UserPageBasicLayout({ children, params: { locale } }: { children:
   return (
     <>
       <div className="mx-4 md:mx-6">
-        <Navbar />
+        <PublicNavbar />
         {children}
       </div>
       <SectionGap />

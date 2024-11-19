@@ -2,7 +2,7 @@
 
 import { Button } from "../ui/button";
 import SkimaaFullLogo from "../logo/skimaa-full-logo";
-import Navbar from "../navbar/navbar";
+import PublicNavbar from "../navbar/public-navbar/public-navbar";
 import groupStudyImage from 'images/resources/group-study-fill.png';
 import Image from 'next/image';
 import { FeaturedCoursesCard } from "@/app/[locale]/(pages)/(public)/(home)/cards/feature-courses-card";

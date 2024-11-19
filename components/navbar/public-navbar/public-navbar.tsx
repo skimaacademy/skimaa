@@ -2,25 +2,25 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "../ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { Button } from "../../ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
 import { CircleUser, Menu, Package2, Search } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
-import SkimaaFullLogo from "../logo/skimaa-full-logo";
-import SkimaaLogo from "../logo/skimaa-logo";
-import { ThemeToggler } from "../ThemeProvider/theme-toggler";
-import { LocaleToggler } from "../LocaleProvider/locale-togger";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../../ui/dropdown-menu";
+import SkimaaFullLogo from "../../logo/skimaa-full-logo";
+import SkimaaLogo from "../../logo/skimaa-logo";
+import { ThemeToggler } from "../../ThemeProvider/theme-toggler";
+import { LocaleToggler } from "../../LocaleProvider/locale-togger";
 import { useTranslation } from "react-i18next";
 import { refineLocalePrefixForRoute, refineRoutePath } from "@/i18nConfig";
-import { UnavailableFeatureToastButton } from "../button/unavailable-feature-toast-button";
+import { UnavailableFeatureToastButton } from "../../button/unavailable-feature-toast-button";
 import { NavLink, NavLinksWithName } from "@/constants/global-constants";
 
 export type GeneralNavbarProps = {
   navLinks: NavLink[];
 };
 
-export default function Navbar() {
+export default function PublicNavbar() {
 
   const pathname = usePathname();
   const { i18n } = useTranslation();
