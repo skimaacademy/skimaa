@@ -121,7 +121,7 @@ export function SignInByEmailForm({
             { 
               <Button disabled={loading || authenticated} type="submit" className="w-full">
                 {authenticated 
-                  ? <><LoadingSpinner /> Redirecting...</> 
+                  ? <><LoadingSpinner /> Redirecting</> 
                   : loading 
                     ? <><LoadingSpinner /> Signing in</> 
                     : 'Sign in'}

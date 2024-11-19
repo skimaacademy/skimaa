@@ -26,6 +26,8 @@ import {
   PhoneIcon,
 } from '@heroicons/react/20/solid';
 import { AuthType } from "@/enums/auth-type.enum"
+import { VerificationForm, VerificationSchemaType } from "./verification-form"
+import { useState } from "react"
 
 export type SignUpByEmailFormProps = {
   title: string;
@@ -35,6 +37,7 @@ export type SignUpByEmailFormProps = {
   authenticated: boolean;
   onSubmitSignUpByEmailFormData: (formData: SignUpByEmailSchemaType) => void;
   onChangeSignUpType: (authType: AuthType) => void;
+  onSubmitVerificationFormData: (formData: VerificationSchemaType) => void;
 };
 
 export const SignUpByEmailSchema = z
@@ -73,9 +76,12 @@ export function SignUpByEmailForm({
   loading = false, 
   authenticated = false, 
   onSubmitSignUpByEmailFormData: onSubmitFormData,
-  onChangeSignUpType: onChangeSignInType }: SignUpByEmailFormProps) {
+  onChangeSignUpType: onChangeSignInType,
+  onSubmitVerificationFormData: onSubmitVerificationFormData }: SignUpByEmailFormProps) {
 
-  const form = useForm<SignUpByEmailSchemaType>({
+  let isVerified: boolean = false;
+
+  const signupForm = useForm<SignUpByEmailSchemaType>({
     resolver: zodResolver(SignUpByEmailSchema),
     defaultValues: {
       firstName: "",
@@ -90,140 +96,152 @@ export function SignUpByEmailForm({
     onSubmitFormData(data);
   }
 
-  return (<Form {...form}>
-    <form className="w-full flex justify-center max-w-xl" onSubmit={form.handleSubmit(onSubmit)}>
-      <Card className="w-full">
-        <CardHeader>
-          <div className="flex mx-auto mb-5">
-            <SkimaaFullLogo height={32}/>
-          </div>
-          <CardTitle className="text-2xl">{title}</CardTitle>
-          <CardDescription className="">
-            Enter your email below to sign up for an account.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="grid gap-4">
-          <div className="grid gap-2">
-            <FormField
-              disabled={loading || authenticated}
-              control={form.control}
-              name="firstName"
-              render={({ field }: any) => (
-                <FormItem>
-                  <FormLabel>First Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter first name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          <div className="grid gap-2">
-            <FormField
-              disabled={loading || authenticated}
-              control={form.control}
-              name="lastName"
-              render={({ field }: any) => (
-                <FormItem>
-                  <FormLabel>Last Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter last name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          <div className="grid gap-2">
-            <FormField
-              disabled={loading || authenticated}
-              control={form.control}
-              name="email"
-              render={({ field }: any) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input type="email" placeholder="Enter email" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          <div className="grid gap-2">
-            <FormField
-              disabled={loading || authenticated}
-              control={form.control}
-              name="password"
-              render={({ field }: any) => (
-                <FormItem>
-                  <FormLabel className="flex justify-between">Password</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter password" {...field} type="password" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          <div className="grid gap-2">
-            <FormField
-              disabled={loading || authenticated}
-              control={form.control}
-              name="confirmPassword"
-              render={({ field }: any) => (
-                <FormItem>
-                  <FormLabel className="flex justify-between">Confirm Password</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter confirm password" {...field} type="password" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-        </CardContent>
-        <CardFooter className="mt-2">
-          <div className="flex flex-col w-full gap-4">
-            { 
-              <Button disabled={loading || authenticated} type="submit" className="w-full">
-                {authenticated 
-                  ? <><LoadingSpinner /> Redirecting...</> 
-                  : loading 
-                    ? <><LoadingSpinner /> Creating Account...</> 
-                    : 'Create Account'}
-              </Button>
-            }
-
-            <div className="flex items-center my-3">
-              <div className="flex-grow border-t border-secondary-foreground/30 mt-1" />
-              <span className="mx-4 text-primary-foreground">Or continue with</span>
-              <div className="flex-grow border-t border-secondary-foreground/30 mt-1" />
+  if (!isVerified) {
+    return (
+    <Form {...signupForm}>
+      <form className="w-full flex justify-center max-w-xl" onSubmit={signupForm.handleSubmit(onSubmit)}>
+        <Card className="w-full">
+          <CardHeader>
+            <div className="flex mx-auto mb-5">
+              <SkimaaFullLogo height={32} />
+            </div>
+            <CardTitle className="text-2xl">{title}</CardTitle>
+            <CardDescription className="">
+              Enter your email below to sign up for an account.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-4">
+            <div className="grid gap-2">
+              <FormField
+                disabled={loading || authenticated}
+                control={signupForm.control}
+                name="firstName"
+                render={({ field }: any) => (
+                  <FormItem>
+                    <FormLabel>First Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter first name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid gap-2">
+              <FormField
+                disabled={loading || authenticated}
+                control={signupForm.control}
+                name="lastName"
+                render={({ field }: any) => (
+                  <FormItem>
+                    <FormLabel>Last Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter last name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid gap-2">
+              <FormField
+                disabled={loading || authenticated}
+                control={signupForm.control}
+                name="email"
+                render={({ field }: any) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder="Enter email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid gap-2">
+              <FormField
+                disabled={loading || authenticated}
+                control={signupForm.control}
+                name="password"
+                render={({ field }: any) => (
+                  <FormItem>
+                    <FormLabel className="flex justify-between">Password</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter password" {...field} type="password" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid gap-2">
+              <FormField
+                disabled={loading || authenticated}
+                control={signupForm.control}
+                name="confirmPassword"
+                render={({ field }: any) => (
+                  <FormItem>
+                    <FormLabel className="flex justify-between">Confirm Password</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter confirm password" {...field} type="password" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
 
-            {/* <Button variant="secondary" className="w-full">
+          </CardContent>
+          <CardFooter className="mt-2">
+            <div className="flex flex-col w-full gap-4">
+              {
+                <Button disabled={loading || authenticated} type="submit" className="w-full">
+                  {authenticated
+                    ? <><LoadingSpinner /> Redirecting...</>
+                    : loading
+                      ? <><LoadingSpinner /> Creating Account...</>
+                      : 'Create Account'}
+                </Button>
+              }
+
+              <div className="flex items-center my-3">
+                <div className="flex-grow border-t border-secondary-foreground/30 mt-1" />
+                <span className="mx-4 text-primary-foreground">Or continue with</span>
+                <div className="flex-grow border-t border-secondary-foreground/30 mt-1" />
+              </div>
+
+              {/* <Button variant="secondary" className="w-full">
               <Image src={googleLogo} alt={"Google Logo"} /> Google
             </Button> */}
-            <Button 
-              onClick={(event: any) => { 
-                event.preventDefault();
-                onChangeSignInType(AuthType.Phone) 
-              }}
-              variant="secondary" 
-              className="w-full">
+              <Button
+                onClick={(event: any) => {
+                  event.preventDefault();
+                  onChangeSignInType(AuthType.Phone)
+                }}
+                variant="secondary"
+                className="w-full">
 
-              <PhoneIcon className="w-6 h-6" /> Phone
-            </Button>
+                <PhoneIcon className="w-6 h-6" /> Phone
+              </Button>
 
-            <div className="text-center">
-              <span>Already have an account?</span> <Link className="hover:underline" href={'signin'}>Sign in</Link>
+              <div className="text-center">
+                <span>Already have an account?</span> <Link className="hover:underline" href={'signin'}>Sign in</Link>
+              </div>
             </div>
-          </div>
-        </CardFooter>
-      </Card>
-    </form>
-  </Form>
-  )
+          </CardFooter>
+        </Card>
+      </form>
+    </Form>
+    )
+  } else {
+    return (
+      <VerificationForm 
+        title={""} 
+        themeBgClass={""}
+        loading={false} 
+        authenticated={false} 
+        onSubmitVerificationFormData={onSubmitVerificationFormData} />
+    )
+  }
 }

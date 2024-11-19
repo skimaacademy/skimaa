@@ -16,6 +16,7 @@ import SkimaaLogo from "@/components/logo/skimaa-logo";
 import Footer from "@/components/footer/footer";
 import { AuthType } from "@/enums/auth-type.enum";
 import { SignUpByPhoneForm, SignUpByPhoneSchemaType } from "./form/signup-by-phone-form";
+import { VerificationSchemaType } from "./form/verification-form";
 
 function SignInPage() {
   
@@ -76,6 +77,10 @@ function SignInPage() {
       setLoading(false);
     }
   }
+
+  async function onSubmitVerificationFormData(formData: VerificationSchemaType) {
+    console.log(formData);
+  }
   
   function redirectAfterSuccessSignIn(route: string): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -105,7 +110,8 @@ function SignInPage() {
             loading={loading}
             authenticated={authenticated}
             onSubmitSignUpByEmailFormData={onSignInByEmail}
-            onChangeSignUpType={setSignInType}>
+            onChangeSignUpType={setSignInType}
+            onSubmitVerificationFormData={onSubmitVerificationFormData}>
           </SignUpByEmailForm>
         }
         {
@@ -117,7 +123,8 @@ function SignInPage() {
             loading={loading}
             authenticated={authenticated}
             onSubmitSignUpByPhoneFormData={onSignInByPhone}
-            onChangeSignUpType={setSignInType}>
+            onChangeSignUpType={setSignInType}
+            onSubmitVerificationFormData={onSubmitVerificationFormData}>
           </SignUpByPhoneForm>
         }
       </div>
